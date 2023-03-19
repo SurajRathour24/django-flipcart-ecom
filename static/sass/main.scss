@@ -1,0 +1,28 @@
+$primary : #2874f0;
+
+
+// Custom.scss
+// Option A: Include all of Bootstrap
+// Include any default variable overrides here (though functions won't be available)
+@import "../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../node_modules/bootstrap/scss/variables";
+
+
+$custom-theme-color: (
+    "fc-primary" : #2563eb,
+    "fc-secondary" : #212121,
+    "fc-white" : #fff,
+    "fc-yellow" : #ffe500,
+    "fc-price-color" : #388e3c,
+    "fc-footer-color" : #172337,
+);
+
+$theme-colors: map-merge($custom-theme-color, $theme-colors);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here 

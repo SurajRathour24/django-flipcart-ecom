@@ -1,0 +1,328 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Online Shopping site for mobiles,electronics,furniture,grocery e.t.c.</title>
+    <link href="{% static 'css/main.min.css' %}" rel='stylesheet'>
+    <link href="{% static 'css/all.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/core.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
+
+    <link rel="icon" href="{% static "/images/favicon.webp" %}" type="/images/webp">
+
+     <!-- javascript -->
+     <script src="{% static "js/app.js" %}"></script>
+     <script src="{% static "js/jquery.js" %}" ></script>
+     <script src="{% static "js/owl.carousel.min.js" %}" ></script>
+     <style>
+      small.d-block.discounted_price_tag {
+        position: absolute;
+        top: 5px;
+        background: #f00;
+        text-align: center;
+        color: #fff;
+        padding: 12px 0px;
+        height: 40px;
+        font-size: 10px;
+        width: 40px;
+        border-radius: 50%;
+        left: 20px;
+    }
+    </style>
+  </head>
+  <body>
+
+<!---------------------------------Flipcart Header Start---------------------------------------->
+
+
+
+<!---------------------------------Flipcart Header Start---------------------------------------->
+<header>
+        <nav class="bg-primary h-50 fc-ptb px-4">
+          <div class="container-sm">  
+            <div class="row align-items-center text-center justify-content-center">
+                <div class="col-sm-1 position-relative">
+                    <a href="{% url 'main' %}"> <img src="{% static '/images/flipkart-logo.webp' %}" class="img-fluid" width="75"></a>
+                        <small class="position-fc-plus"><a href="#" class="text-white text-decoration-none fc-font-xsm"><i>Explore <span class="fw-normal fc-yellow">Plus</span> </i> <sup><img src="{% static '/images/plus.webp' %}" alt="flipcart-plus" class="img-fluid" width="10"></sup></a></small>
+                </div>
+                <div class="col-sm-5 p-0">
+                    <div class="input-group">
+                        <div class="form-outline">
+                          <input type="search" id="form1" class="form-control rounded-0 w-100 fc-font-sm" size="63" placeholder="Search for product, brand and more">
+                        </div>
+                        <button type="button" class="btn btn-fc-white p-1 rounded-0 pe-3">
+                            <i class="fa-solid fa-magnifying-glass text-primary "></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-sm-2">
+                    {% if request.user.is_authenticated %}
+                        <button type="submit" class="btn btn-fc-white text-primary px-5 py-1 rounded-0 fw-normal"><a href="{% url 'profile' %}">Profile</a></button>
+                    {% else %}    
+                        <button type="submit" class="btn btn-fc-white text-primary px-5 py-1 rounded-0 fw-normal"><a href="{% url 'signin' %}">Login</a></button>
+                    {% endif %}    
+                </div>
+                <div class="col-sm-1" style="width: 10%;">
+                    <a href="#" class="text-fc-white text-decoration-none fc-font-sm fw-bold">Become a Seller</a>
+                </div>
+
+                <div class="col-sm-1 position-relative text-justify">
+                    <div class="dropdown">
+                        <a class="text-white dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                          More
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                          <li><a class="dropdown-item" href="#"><i class="fa-solid fa-bell text-primary"></i> &nbsp; &nbsp; Notification Preference</a></li>
+                          <li><a class="dropdown-item" href="#"><i class="fa-solid fa-headset text-primary"></i>&nbsp; &nbsp; 24x7 Customer Support</a></li>
+                          <li><a class="dropdown-item" href="#"><i class="fa-solid fa-rectangle-ad text-primary"></i> &nbsp; &nbsp; Advertise</a></li>
+                          <li class="border-bottom py-2"><i class="fa-solid fa-download "></i><a href="https://play.google.com/store/apps/details?id=com.flipkart.android&hl=en_IN&gl=US" class="text-primary" target="_blank"> Download App</a></li>
+                        </ul>
+                      </div>
+                </div>
+                <div class="col-sm-1">
+                    <a href="{% url 'mycart' %}" class="text-fc-white text-decoration-none fw-bold"><i class="fa-solid fa-cart-shopping fc-font-sm "></i> Cart</a>
+                </div>
+            </div>
+          </div>   
+        </nav>  
+</header>
+
+{% block navbottom  %}
+
+{% endblock %}
+
+{% block bannerslider %}
+
+{% endblock bannerslider %}
+
+
+{% block main %}
+
+
+{% endblock main %}
+
+
+<!-- Remove the container if you want to extend the Footer to full width. -->
+<div class="container-fluid bg-fc-footer-color">
+    <!-- Footer -->
+    <footer class="text-center text-lg-start text-white">
+      <!-- Grid container -->
+      <div class="container-fluid p-4 pb-0">
+        <!-- Section: Links -->
+        <section class="container-fluid p-4">
+          <!--Grid row-->
+          <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase fc-font-mds footer-txt-color">ABOUT</h5>
+  
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white fc-font-xsm text-decoration-none">Contact Us</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white fc-font-xsm text-decoration-none">About Us</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white fc-font-xsm text-decoration-none">Career </a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white fc-font-xsm text-decoration-none">Flipcart Stories</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white fc-font-xsm text-decoration-none">Press</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white fc-font-xsm text-decoration-none">Flipcart Wholesale</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white fc-font-xsm text-decoration-none">Flipcart Corporate</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+  
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase fc-font-mds footer-txt-color">Help</h5>
+  
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white fc-font-xsm text-decoration-none">Payment</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white fc-font-xsm text-decoration-none">Shipping</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white fc-font-xsm text-decoration-none">Cancellations & Returns</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white fc-font-xsm text-decoration-none">FAQ</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white fc-font-xsm text-decoration-none">Report Infregiment</a>
+                </li>
+              </ul>
+              
+            </div>
+            <!--Grid column-->
+  
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase fc-font-mds footer-txt-color">Policy</h5>
+  
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white fc-font-xsm text-decoration-none">Return Policy</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white fc-font-xsm text-decoration-none">Terms Of Use</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white fc-font-xsm text-decoration-none">Security</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white fc-font-xsm text-decoration-none">Privacy</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white fc-font-xsm text-decoration-none">Sitemap</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white fc-font-xsm text-decoration-none">ERP Compliance</a>
+                </li>
+              </ul>
+              
+            </div>
+            <!--Grid column-->
+  
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase fc-font-mds footer-txt-color">Social</h5>
+  
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="#!" class="text-white fc-font-xsm text-decoration-none">Facebook</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white fc-font-xsm text-decoration-none">Twitter</a>
+                </li>
+                <li>
+                  <a href="#!" class="text-white fc-font-xsm text-decoration-none">Youtube</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+  
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0 px-4 border-start">
+              <h5 class="text-uppercase fc-font-mds footer-txt-color">Mail Us:</h5>
+  
+              <p class="fc-font-xsm">Flipkart Internet Private Limited,
+                Buildings Alyssa, Begonia &
+                Clove Embassy Tech Village,
+                Outer Ring Road, Devarabeesanahalli Village,
+                Bengaluru, 560103,
+                Karnataka, India</p>
+            </div>
+  
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0 px-4">
+              <h5 class="text-uppercase fc-font-mds footer-txt-color">Register Office Address:</h5>
+  
+                <p class="fc-font-xsm">Flipkart Internet Private Limited,
+                  Buildings Alyssa, Begonia &
+                  Clove Embassy Tech Village,
+                  Outer Ring Road, Devarabeesanahalli Village,
+                  Bengaluru, 560103,
+                  Karnataka, India
+                  CIN : U51109KA2012PTC066107
+                  Telephone: 044-45614700</p>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </section>
+        <!-- Section: Links -->
+  
+        <hr class="mb-4" />
+  
+        <!-- Section: CTA -->
+        <section class="footer-bottom p-3">
+          <div class="container-fluid">
+            <div class="row justify-content-center">
+              <div class="col-lg-2 col-md-6 col-12">
+                <p class="fc-font-sm"><i class="fa-solid fa-suitcase text-warning"></i> Become a Seller</p>
+              </div>
+              <div class="col-lg-1 col-md-6 col-12">
+                <p class="fc-font-sm"><i class="fa-solid fa-rectangle-ad text-warning"></i> Advertise</p>
+              </div>
+              <div class="col-lg-1 col-md-6 col-12">
+                <p class="fc-font-sm"><i class="fa-solid fa-gifts text-warning"></i> Gift Cards</p>
+              </div>
+              <div class="col-lg-1 col-md-6 col-12">
+                <p class="fc-font-sm"><i class="fa-solid fa-circle-question text-warning"></i> Help Center</p>
+              </div>
+              <div class="col-lg-3 col-md-6 col-12">
+                <p class="fc-font-sm">&copy;2007-2022 Flipkart.com</p>
+              </div>
+              <div class="col-lg-3 col-md-6 col-12">
+                <!-- <img src="{% static "images/payment-footer.png"class="img-fluid"> -->
+                <ul class="list-unstyled"> 
+                  <li class="d-inline text-warning bg-white py-1 px-2 text-sm rounded-2"><a href="#"><i class="fa-brands fa-cc-amex text-dark"></i></a></li>
+                  <li class="d-inline text-warning bg-white py-1 px-2 text-sm rounded-2"><a href="#"><i class="fa-brands fa-google-pay text-dark"></i></a></li>
+                  <li class="d-inline text-warning bg-white py-1 px-2 text-sm rounded-2"><a href="#"><i class="fa-brands fa-cc-discover text-dark"></i></a></li>
+                  <li class="d-inline text-warning bg-white py-1 px-2 text-sm rounded-2"><a href="#"><i class="fa-brands fa-cc-paypal text-dark"></i></a></li>
+                  <li class="d-inline text-warning bg-white py-1 px-2 text-sm rounded-2"><a href="#"><i class="fa-brands fa-cc-mastercard text-dark"></i></a></li>
+                  <li class="d-inline text-warning bg-white py-1 px-2 text-sm rounded-2"><a href="#"><i class="fa-brands fa-stripe text-dark"></i></a></li>
+                  <li class="d-inline  bg-white py-1 px-2 text-sm rounded-2"><a href="#"><i class="fa-brands fa-cc-visa text-dark"></i></a></li>
+                  <li class="d-inline  bg-white py-1 px-2 text-sm rounded-2"><a href="#"><i class="fa-solid fa-credit-card text-dark"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        </div>
+      </footer>
+      </div>
+    
+              
+        <!-- Section: CTA -->
+  
+  
+  <script>
+      $('.owl-carousel').owlCarousel({
+  loop:true,
+  margin:10,
+  nav:true,
+  dots: false,
+  responsiveClass:true,
+  responsive:{
+    0:{
+        items:1
+    },
+    600:{
+        items:3
+    },
+    1000:{
+        items:5
+    }
+  }
+  })
+    </script>
+  
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js"></script>
+      <script src="{% static "js/all.min.js" %}"></script>
+      <script src="{% static "js/core.js" %}"></script>
+      <script src="{% static "js/popper.js" %}"></script>
+  
+      
+    </body>
+  </html>
